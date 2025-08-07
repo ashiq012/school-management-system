@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-dotenv.config(); // 🧠 Load env vars before parsing them
+dotenv.config(); // Load env vars before parsing them
 
 import { z } from "zod";
 
