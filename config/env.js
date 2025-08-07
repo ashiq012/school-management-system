@@ -1,14 +1,15 @@
 import dotenv from "dotenv";
-dotenv.config(); // Load env vars before parsing them
+dotenv.config();
 
 import { z } from "zod";
 
 export const env = z
   .object({
     PORT: z.coerce.number().default(3000),
-    DATABASE_HOST: z.string(),
-    DATABASE_USER: z.string(),
-    DATABASE_PASSWORD: z.string(),
-    DATABASE_NAME: z.string(),
+    MYSQLHOST: z.string(),
+    MYSQLUSER: z.string(),
+    MYSQLPASSWORD: z.string(),
+    MYSQLDATABASE: z.string(),
+    MYSQLPORT: z.coerce.number().default(3306), // optional, for clarity
   })
   .parse(process.env);
