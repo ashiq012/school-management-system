@@ -28,9 +28,10 @@ export const listSchools = async (req, res) => {
 
   const schoolsWithDistance = schools.map((school) => {
     const distance = getApproxDistance(lat, lng, school.latitude, school.longitude);
-    return { ...school, distance: Number(distance.toFixed(2)) }; // Optional: round to 2 decimals
+    return { ...school, distance: Number(distance.toFixed(2)) };
   });
 
   schoolsWithDistance.sort((a, b) => a.distance - b.distance);
   res.json(schoolsWithDistance);
 };
+
