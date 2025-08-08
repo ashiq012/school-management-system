@@ -1,4 +1,4 @@
-import { db } from "../config/db-school.js";
+import db from "../config/db-school.js";
 import getApproxDistance from "../utils/distanceCal.js";
 
 export const addSchool = async (req, res) => {
